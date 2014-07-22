@@ -1721,9 +1721,8 @@ IdPProxy -> PeerConnection:
                 in order to trigger the required user interactions.  Once any user
                 interactions are complete, the IFRAME MUST send a <xref
                 target="WebMessaging">postMessage</xref> to its containing window
-                indicating completion.  Any message is sufficient for this
-                purpose, the <spanx style="verb">source</spanx> parameter
-                identifies the originating IFRAME.
+                indicating completion, as described in section 8.2.1 of 
+                <xref target="webrtc-api"/>.
               </t>
               <t>
                 In all other respects, "LOGINNEEDED" can be treated as an
