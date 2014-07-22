@@ -2026,12 +2026,13 @@ IdP Proxy -> PeerConnection:
 
           <section title="PeerConnection Origin Check" anchor="sec.pc-origin">
             <t>
-              Fundamentally, the IdP proxy is just a piece of HTML and JS loaded
+              Fundamentally, the IdP proxy is just a piece of JS loaded
               by the browser, so nothing stops a Web attacker o from creating
-              their own IFRAME, loading the IdP proxy HTML/JS, and requesting a
-              signature. In order to prevent this attack, we require that all
-              signatures be tied to a specific origin ("rtcweb://...") which
-              cannot be produced by content JavaScript. Thus, while an attacker
+              their own IFRAME, loading the IdP proxy JS, and requesting a
+              signature. In order to prevent this attack, we require that 
+              communication with the IdP proxy be via a MessageChannel in a
+              way that cannot be emulated by hostile JS.  This is discussed in
+              section 8.2.1 of <xref target="webrtc-api"/>. Thus, while an attacker
               can instantiate the IdP proxy, they cannot send messages from an
               appropriate origin and so cannot create acceptable
               assertions. I.e., the assertion request must have come from the
