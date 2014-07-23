@@ -1319,18 +1319,6 @@ a=sendrecv
 ]]></artwork>
             </figure>
             <t>
-              Each identity attribute should be paired (and attests to) with an
-              <spanx style="verb">a=fingerprint</spanx> attribute and therefore
-              can exist either at the session or media level.  Multiple identity
-              attributes may appear at either level, though it is RECOMMENDED
-              that implementations not do this, because it becomes very unclear
-              what security claim that they are making and the UI guidelines
-              above become unclear.  Browsers MAY choose refuse to display any
-              identity indicators in the face of multiple identity attributes
-              with different identities but SHOULD process multiple attributes
-              with the same identity as described above.
-            </t>
-            <t>
               Multiple <spanx style="verb">a=fingerprint</spanx> values can be
               used to offer alternative certificates for a peer.  The <spanx
               style="verb">a=identity</spanx> attribute MUST include all
